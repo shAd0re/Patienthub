@@ -1,0 +1,4 @@
+fapivenv/
+.idea/
+__pycache__/
+check.py
