@@ -1,0 +1,471 @@
+body {
+    background-color: #e0f2fe;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Keep login page centered */
+body.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 25px;
+    background-color: #38bdf8;  /* sky blue */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+}
+
+/* Register*/
+.register-container {
+    max-width: 500px;  /* Slightly wider for registration */
+}
+
+select.form-control {
+    height: 45px;
+}
+
+#patientFields, #doctorFields {
+    margin-top: 20px;
+}
+
+
+/* dashb */
+.navbar {
+    background-color: #e0f2fe;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 18px;
+}
+
+.nav-links a.active {
+    font-weight: bold;
+}
+
+.logout {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.appointment-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.datetime-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.book-btn {
+    display: block;
+    max-width: 400px;
+    margin: 40px auto 0;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+/* my appts */
+.appointments-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.appointment-card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.appointment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.appointment-info span {
+    font-size: 18px;
+}
+
+.cancel-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #ff3333;
+}
+
+.add-appointment-btn {
+    background-color: #38bdf8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.add-appointment-btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* bill and pres */
+
+/* Content container */
+.content-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Billing styles */
+.bill-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.date-section {
+    text-align: center;
+    color: #0ea5e9;
+}
+
+.month {
+    font-size: 18px;
+}
+
+.day {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.year {
+    font-size: 16px;
+}
+
+.bill-details {
+    flex-grow: 1;
+}
+
+.bill-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.bill-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.bill-amounts {
+    min-width: 200px;
+    text-align: right;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.insurance {
+    color: #22c55e;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.paid-status {
+    color: #22c55e;
+    padding: 4px 12px;
+    border-radius: 15px;
+    background-color: #dcfce7;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.view-details {
+    color: #666;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Prescription styles */
+.prescription-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.prescription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.prescription-date {
+    color: #666;
+}
+
+.prescription-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.medication-info p,
+.prescriber-info p {
+    margin: 10px 0;
+}
+
+/* doc */
+/* Doctor specific styles */
+.patient-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.patient-name {
+    font-size: 16px;
+    color: #666;
+}
+
+.update-btn {
+    background-color: #38bdf8;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.update-btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 12px;
+}
+
+.modal-header {
+    background-color: #e0f2fe;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-footer .btn-primary {
+    background-color: #38bdf8;
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #0ea5e9;
+}
+
+/* Make text areas look consistent */
+.modal-body textarea {
+    resize: none;
+    border-radius: 8px;
+}
+
+/* Add some spacing in the modal */
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+}
+
+/* Doctor specific buttons */
+.edit-bill-btn,
+.edit-prescription-btn {
+    background-color: #38bdf8;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.edit-bill-btn:hover,
+.edit-prescription-btn:hover {
+    background-color: #0ea5e9;
+}
+
+/* Adjust prescription card for doctor view */
+.prescription-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Modal input styling */
+.modal input[type="number"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.modal select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* Update page styles */
+.update-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.appointment-header {
+    margin-bottom: 30px;
+}
+
+.appointment-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.patient-info, .appointment-time {
+    color: #666;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.update-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-section {
+    margin-bottom: 25px;
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-section textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.button-group button {
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #38bdf8;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #d0d0d0;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+}
