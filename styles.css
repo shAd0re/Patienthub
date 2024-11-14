@@ -1,0 +1,50 @@
+body {
+    background-color: #e0f2fe;  /* light blue background */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 25px;
+    background-color: #38bdf8;  /* sky blue */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0ea5e9;
+}
