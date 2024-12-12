@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 import models
 import schemas
@@ -14,6 +14,14 @@ from passlib.context import CryptContext
 from jose import JWTError, jwt
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from datetime import timedelta
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+import json
+
+
+templates = Jinja2Templates(directory="templates")
+
 
 router = APIRouter(
     prefix="/auth",
@@ -28,6 +36,18 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 def get_password_hash(password: str):
     return pwd_context.hash(password)
 
+
+@router.get("/login-page", response_class=HTMLResponse)
+async def render_login(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request, "hide_navbar": True})
+
+
+@router.get("/register-page", response_class=HTMLResponse)
+async def render_login(request: Request):
+    return templates.TemplateResponse("register.html", {"request": request, "hide_navbar": True})
+
+
+#ENDPOINTS
 @router.post("/register/patient", response_model=schemas.UserResponse)
 def register_patient(
     registration_data: schemas.PatientRegistration,
@@ -100,13 +120,20 @@ def register_doctor(
         first_name=registration_data.doctor.first_name,
         last_name=registration_data.doctor.last_name,
         phone=registration_data.doctor.phone,
-        specialization=registration_data.doctor.specialization
+        specialization=registration_data.doctor.specialization,
+        available_days=json.dumps(registration_data.doctor.available_days),
+        available_times=json.dumps(registration_data.doctor.available_times)
     )
     db.add(db_doctor)
     db.commit()
     db.refresh(db_doctor)
     
     return db_user
+
+# # When retrieving doctor data
+# doctor = db.query(models.Doctor).first()
+# available_days = json.loads(doctor.available_days)
+# available_times = json.loads(doctor.available_times)
 
 async def get_current_user(
     token: str = Depends(oauth2_scheme),
@@ -160,7 +187,15 @@ async def login(
         data={"sub": user.user_name, "role": user.role},
         expires_delta=access_token_expires
     )
-    return {"access_token": access_token, "token_type": "bearer"}
+    
+    # Explicitly create a Token object that matches the schema
+    token = schemas.Token(
+        access_token=access_token,
+        token_type="bearer",
+        role=user.role  # Add this line
+    )
+    
+    return token
 
 # Example of protected route
 @router.get("/me", response_model=schemas.UserResponse)

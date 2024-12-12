@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr, condecimal
 from datetime import date
-from typing import Optional, Literal
+from typing import Optional, Literal, List
 from datetime import datetime
 from decimal import Decimal
 
@@ -29,6 +29,8 @@ class DoctorCreate(BaseModel):
     last_name: str
     phone: str
     specialization: str
+    available_days: list[str] 
+    available_times: list[str]
 
 # Combined registration schemas
 class PatientRegistration(BaseModel):
@@ -42,6 +44,7 @@ class DoctorRegistration(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    role: str
 
 class TokenData(BaseModel):
     user_name: str | None = None
@@ -53,17 +56,24 @@ class UserLogin(BaseModel):
 
 class AppointmentBase(BaseModel):
     doctor_id: int
-    appointment_date: datetime
+    appointment_date: str
 
 class AppointmentCreate(AppointmentBase):
-    pass
+    appointment_time: str  # HH:MM
+    description: str = None
 
 class AppointmentUpdate(BaseModel):
     treatment: Optional[str] = None
     diagnosis: Optional[str] = None
     prescription: Optional[str] = None
 
+class AvailabilityResponse(BaseModel):
+    available_days: List[str]
+    available_times: List[str]
 
+    class Config:
+        from_attributes = True  # for Pydantic v2
+        # or use orm_mode = True for Pydantic v1
 
 class BillingBase(BaseModel):
     amount: condecimal(max_digits=10, decimal_places=2)

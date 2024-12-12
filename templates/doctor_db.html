@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Patienthub - Doctor Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-links">
-            <a href="#" class="active">My Appointments</a>
-            <a href="#">Billing</a>
-            <a href="#">Prescriptions</a>
-        </div>
-        <a href="index.html" class="logout">Logout</a>
-    </nav>
-
+{% extends 'layout.html' %}
+{% block content%}
     <div class="appointments-container">
         <div class="appointment-card">
             <div class="appointment-info">
@@ -22,7 +7,7 @@
                     <span class="appointment-date">Appointment: Friday, Nov 1   10AM</span>
                     <span class="patient-name">Patient: John Doe</span>
                 </div>
-                <button class="update-btn" onclick="openUpdateModal()">Update</button>
+                <button class="btn btn-primary" onclick="openUpdateModal()">Update</button>
             </div>
         </div>
     </div>
@@ -56,5 +41,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}

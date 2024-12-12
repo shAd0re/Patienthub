@@ -6,3 +6,5 @@ fapi2venv/
 alembic.ini
 alembicenv/
 deprectated/
+*.db
+*.zip
