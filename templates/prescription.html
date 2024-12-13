@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block content%}
+    <div class="content-container">
+        <div class="prescriptions-list">
+            <div class="prescription-card">
+                <div class="prescription-header">
+                    <h3>Prescription Details</h3>
+                    <div class="prescription-date">Prescribed: Apr 30, 2024</div>
+                </div>
+                <div class="prescription-content">
+                    <div class="medication-info">
+                        <p><strong>Medication:</strong> [Medication Name]</p>
+                        <p><strong>Dosage:</strong> [Dosage Information]</p>
+                        <p><strong>Instructions:</strong> [Usage Instructions]</p>
+                        <p><strong>Refills:</strong> [Number of Refills]</p>
+                    </div>
+                    <div class="prescriber-info">
+                        <p><strong>Prescribed by:</strong> Dr. [Name]</p>
+                        <p><strong>Pharmacy:</strong> [Pharmacy Name]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

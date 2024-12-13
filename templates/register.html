@@ -1,0 +1,142 @@
+{% extends 'layout.html' %}
+{% block body_class %}login-page{% endblock %}
+{% block content%}
+
+    <div class="login-container register-container ">
+        <h1>Patienthub</h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" class="form-control" id="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label>Role:</label>
+                <select class="form-control" id="role" required>
+                    <option value="">Select Role</option>
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+            </div>
+
+            <!-- Patient/Doctor Specific Fields (will show/hide based on role) -->
+            <div id="patientFields" style="display: none;">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" class="form-control" id="patientFirstName">
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" id="patientLastName">
+                </div>
+
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <select class="form-control" id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" class="form-control" id="patientPhone">
+                </div>
+            </div>
+
+            <div id="doctorFields" style="display: none;">
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" class="form-control" id="doctorFirstName">
+                </div>
+                
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" class="form-control" id="doctorLastName">
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" class="form-control" id="doctorPhone">
+                </div>
+                
+                <div class="form-group">
+                    <label>Specialization:</label>
+                    <input type="text" class="form-control" id="specialization">
+                </div>
+                <!-- Previous fields remain the same -->
+                
+                <div class="form-group">
+                    <label class="mb-2">Available Days:</label>
+                    <div class="btn-group d-flex flex-wrap gap-2" role="group" aria-label="Available days">
+                        <input type="checkbox" class="btn-check" id="monday" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="monday">Mon</label>
+            
+                        <input type="checkbox" class="btn-check" id="tuesday" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="tuesday">Tue</label>
+            
+                        <input type="checkbox" class="btn-check" id="wednesday" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="wednesday">Wed</label>
+            
+                        <input type="checkbox" class="btn-check" id="thursday" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="thursday">Thu</label>
+            
+                        <input type="checkbox" class="btn-check" id="friday" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="friday">Fri</label>
+                    </div>
+                </div>
+            
+                <div class="form-group mt-3">
+                    <label class="mb-2">Available Times:</label>
+                    <div class="btn-group d-flex flex-wrap gap-2" role="group" aria-label="Available times">
+                        <input type="checkbox" class="btn-check" id="time-9" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-9">9 AM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-10" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-10">10 AM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-11" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-11">11 AM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-12" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-12">12 PM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-13" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-13">1 PM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-14" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-14">2 PM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-15" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-15">3 PM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-16" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-16">4 PM</label>
+            
+                        <input type="checkbox" class="btn-check" id="time-17" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="time-17">5 PM</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <div class="mt-3">
+            <a href="/auth/login-page">Already have an account? Login here</a>
+        </div>
+    </div>
+
+{% endblock %}

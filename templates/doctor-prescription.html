@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content%}
+    <div class="content-container">
+        <div class="prescriptions-list">
+            <div class="prescription-card">
+                <div class="prescription-header">
+                    <div>
+                        <h3>Prescription - John Doe</h3>
+                        <div class="prescription-date">Prescribed: Apr 30, 2024</div>
+                    </div>
+                    <button class="btn btn-primary">Edit Prescription</button>
+                </div>
+                <div class="prescription-content">
+                    <div class="medication-info">
+                        <p><strong>Diagnosis:</strong> Common Cold</p>
+                        <p><strong>Treatment:</strong> Rest and medication</p>
+                        <p><strong>Prescription:</strong> Antihistamines - Take as directed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for editing prescription -->
+    <div class="modal fade" id="prescriptionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Prescription</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <label>Diagnosis:</label>
+                        <textarea class="form-control" id="diagnosis" rows="2"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Treatment:</label>
+                        <textarea class="form-control" id="treatment" rows="2"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Prescription Details:</label>
+                        <textarea class="form-control" id="prescriptionDetails" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="savePrescription()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

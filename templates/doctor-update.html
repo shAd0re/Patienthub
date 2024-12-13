@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content%}
+    <div class="update-container">
+        <!-- Appointment Info Header -->
+        <div class="appointment-header">
+            <div class="appointment-info">
+                <h2>Update Appointment Details</h2>
+                <p class="patient-info">Patient: John Doe</p>
+                <p class="appointment-time">Appointment: Friday, Nov 1   10AM</p>
+            </div>
+        </div>
+
+        <!-- Update Form -->
+        <form class="update-form">
+            <div class="form-section">
+                <label>Diagnosis:</label>
+                <textarea class="form-control" id="diagnosis" rows="3" placeholder="Enter diagnosis details"></textarea>
+            </div>
+
+            <div class="form-section">
+                <label>Treatment:</label>
+                <textarea class="form-control" id="treatment" rows="3" placeholder="Enter treatment plan"></textarea>
+            </div>
+
+            <div class="form-section">
+                <label>Prescription:</label>
+                <textarea class="form-control" id="prescription" rows="3" placeholder="Enter prescription details"></textarea>
+            </div>
+
+            <div class="billing-section">
+                <h3>Billing Information</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Amount ($):</label>
+                        <input type="number" class="form-control" id="billAmount" step="0.01" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label>Insurance Provider:</label>
+                        <input type="text" class="form-control" id="insurance" placeholder="Enter insurance provider">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Notes:</label>
+                    <textarea class="form-control" id="billingNotes" rows="2" placeholder="Enter any billing notes"></textarea>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='doctor-dashboard.html'">Cancel</button>
+                <button type="submit" class="btn btn-primary">Save Updates</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

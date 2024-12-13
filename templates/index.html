@@ -1,0 +1,21 @@
+
+{% extends 'layout.html' %}
+
+{% block body_class %}login-page{% endblock %}
+{% block content%}
+    <div class="login-container">
+        <h1>Patienthub</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" class="form-control" id="username" required>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+        <a href="/auth/register-page">Don't have an account? Register here</a>
+    </div>
+{% endblock %}

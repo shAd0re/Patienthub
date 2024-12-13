@@ -2,3 +2,9 @@ fapivenv/
 .idea/
 __pycache__/
 check.py
+fapi2venv/
+alembic.ini
+alembicenv/
+deprectated/
+*.db
+*.zip

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block content%}
+    <div class="content-container">
+        <h2>Billing Management</h2>
+
+        <div class="billing-cards">
+            <div class="bill-card">
+                <div class="bill-details">
+                    <h3>Visit Friday, Nov 1 - John Doe</h3>
+                </div>
+                <div class="bill-amounts">
+                    <div class="amount-row">
+                        <span>Amount:</span>
+                        <span>$141.00</span>
+                    </div>
+                    <button class="btn btn-primary">Edit Bill</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for creating/editing bill -->
+    <div class="modal fade" id="billModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create/Edit Bill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mb-3">
+                        <label>Appointment ID:</label>
+                        <select class="form-control" id="appointmentId" required>
+                            <!-- Will be populated with unbilled appointments -->
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Amount:</label>
+                        <input type="number" class="form-control" id="amount" step="0.01" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveBill()">Save Bill</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
